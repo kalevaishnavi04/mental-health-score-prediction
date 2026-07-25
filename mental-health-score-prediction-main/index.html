@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindPulse — Digital Wellbeing Score Predictor</title>
+  <meta name="description" content="Predict your mental wellbeing score from your social media and lifestyle habits using a trained machine learning model." />
+
+  <!-- Fonts: Fraunces (display), Manrope (body/UI), JetBrains Mono (data) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient background blobs (decorative, purely CSS) -->
+  <div class="ambient" aria-hidden="true">
+    <span class="blob blob--mint"></span>
+    <span class="blob blob--coral"></span>
+    <span class="blob blob--gold"></span>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a href="#top" class="brand">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="28" height="28">
+            <circle cx="20" cy="20" r="17" fill="none" stroke="var(--mint)" stroke-width="2" opacity="0.5"/>
+            <circle cx="20" cy="20" r="11" fill="none" stroke="var(--mint)" stroke-width="2"/>
+            <circle cx="20" cy="20" r="4" fill="var(--mint)"/>
+          </svg>
+        </span>
+        MindPulse
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#about">How it works</a>
+        <a href="#predict-form">Take the check-in</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="wrap hero__inner">
+        <div class="hero__copy reveal">
+          <p class="eyebrow">A digital&nbsp;wellbeing check-in</p>
+          <h1 class="hero__title">
+            Your phone keeps score.<br />
+            <span class="hero__title-accent">So can you.</span>
+          </h1>
+          <p class="hero__lede">
+            MindPulse reads the small signals — screen time, sleep, movement, stress —
+            and turns them into one clear number, produced by a model trained on real
+            student habits. Two minutes in, one honest score out.
+          </p>
+          <div class="hero__ctas">
+            <a href="#predict-form" class="btn btn--primary">
+              Start my check-in
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#about" class="btn btn--ghost">How the score works</a>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal" aria-hidden="true">
+          <div class="breath" id="heroBreath">
+            <svg viewBox="0 0 300 300" width="100%" height="100%">
+              <circle class="breath__ring breath__ring--1" cx="150" cy="150" r="130" />
+              <circle class="breath__ring breath__ring--2" cx="150" cy="150" r="100" />
+              <circle class="breath__ring breath__ring--3" cx="150" cy="150" r="70" />
+              <circle class="breath__core" cx="150" cy="150" r="42" />
+            </svg>
+            <div class="breath__label">
+              <span class="breath__label-num">7.4B</span>
+              <span class="breath__label-text">screen unlocks<br />happen daily</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT / HOW IT WORKS ============ -->
+    <section class="about" id="about">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--center">How it works</p>
+        <h2 class="section-title section-title--center">Three inputs. One trained model. One number.</h2>
+
+        <div class="about__grid">
+          <article class="about-card reveal">
+            <div class="about-card__icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 19V9m6 10V4m6 15v-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>You share your habits</h3>
+            <p>Screen time, sleep, study, movement and stress — twelve everyday data points, nothing invasive.</p>
+          </article>
+          <article class="about-card reveal">
+            <div class="about-card__icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3.4" stroke="currentColor" stroke-width="1.8"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>The model does the reading</h3>
+            <p>A regression model, trained on real survey data from students worldwide, weighs each factor.</p>
+          </article>
+          <article class="about-card reveal">
+            <div class="about-card__icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 1 1 16 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 12l4-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg>
+            </div>
+            <h3>You get a score, not a verdict</h3>
+            <p>A 0–10 wellbeing score with plain-language context — a mirror, not a diagnosis.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PREDICTION FORM ============ -->
+    <section class="predict" id="predict-form">
+      <div class="wrap predict__inner">
+
+        <div class="predict__intro reveal">
+          <p class="eyebrow">Your check-in</p>
+          <h2 class="section-title">Tell MindPulse about your week</h2>
+          <p class="predict__intro-text">
+            Answer honestly — the model only works with what you give it.
+            All fields are required. Nothing you enter here is stored.
+          </p>
+        </div>
+
+        <form class="glass-card form-card reveal" id="predictForm" novalidate>
+
+          <div class="form-grid">
+
+            <!-- Age -->
+            <div class="field">
+              <label for="age">Age</label>
+              <input type="number" id="age" name="age" min="10" max="100" step="1" placeholder="e.g. 21" required inputmode="numeric" />
+              <span class="field__hint">10–100 years</span>
+              <span class="field__error" role="alert"></span>
+            </div>
+
+            <!-- Gender -->
+            <div class="field">
+              <label for="gender">Gender</label>
+              <select id="gender" name="gender" required>
+                <option value="" disabled selected>Select gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              <span class="field__error" role="alert"></span>
+            </div>
+
+            <!-- Country -->
+            <div class="field">
+              <label for="country">Country</label>
+              <input type="text" id="country" name="country" list="countryList" placeholder="e.g. India" required autocomplete="off" />
+              <datalist id="countryList">
+                <option value="India"></option>
+                <option value="USA"></option>
+                <option value="Canada"></option>
+                <option value="Australia"></option>
+                <option value="UK"></option>
+                <option value="Germany"></option>
+                <option value="Mexico"></option>
+                <option value="Turkey"></option>
+                <option value="France"></option>
+              </datalist>
+              <span class="field__hint">Any country — type your own</span>
+              <span class="field__error" role="alert"></span>
+            </div>
+
+            <!-- Academic Level -->
+            <div class="field">
+              <label for="academic_level">Academic level</label>
+              <select id="academic_level" name="academic_level" required>
+                <option value="" disabled selected>Select level</option>
+                <option value="High School">High School</option>
+                <option value="Undergraduate">Undergraduate</option>
+                <option value="Graduate">Graduate</option>
+              </select>
+              <span class="field__error" role="alert"></span>
+            </div>
+
+            <!-- Most Used Platform -->
+            <div class="field">
+              <label for="most_used_platform">Most-used platform</label>
+              <select id="most_used_platform" name="most_used_platform" required>
+                <option value="" disabled selected>Select platform</option>
+                <option value="Instagram">Instagram</option>
+                <option value="YouTube">YouTube</option>
+                <option value="TikTok">TikTok</option>
+                <option value="WhatsApp">WhatsApp</option>
+                <option value="Facebook">Facebook</option>
+                <option value="Snapchat">Snapchat</option>
+                <option value="Twitter">Twitter</option>
+                <option value="LinkedIn">LinkedIn</option>
+                <option value="WeChat">WeChat</option>
+                <option value="LINE">LINE</option>
+                <option value="KakaoTalk">KakaoTalk</option>
+                <option value="VKontakte">VKontakte</option>
+              </select>
+              <span class="field__error" role="alert"></span>
+            </div>
+
+            <!-- Purpose of Use -->
+            <div class="field">
+              <label for="purpose_of_use">Main purpose of use</label>
+              <select id="purpose_of_use" name="purpose_of_use" required>
+                <option value="" disabled selected>Select purpose</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Education">Education</option>
+                <option value="Networking">Networking</option>
+                <option value="News">News</option>
+              </select>
+              <span class="field__error" role="alert"></span>
+            </div>
+
+            <!-- Avg Daily Usage Hours -->
+            <div class="field">
+              <label for="avg_daily_usage_hours">Avg. daily usage (hours)</label>
+              <input type="number" id="avg_daily_usage_hours" name="avg_daily_usage_hours" min="0" max="24" step="0.1" placeholder="e.g. 5" required inputmode="decimal" />
+              <span class="field__hint">0–24 hours</span>
+              <span class="field__error" role="alert"></span>
+            </div>
+
+            <!-- Daily Unlocks -->
+            <div class="field">
+              <label for="daily_unlocks">Daily phone unlocks</label>
+              <input type="number" id="daily_unlocks" name="daily_unlocks" min="0" step="1" placeholder="e.g. 80" required inputmode="numeric" />
+              <span class="field__hint">Number of times per day</span>
+              <span class="field__error" role="alert"></span>
+            </div>
+
+            <!-- Study Hours -->
+            <div class="field">
+              <label for="study_hours">Study hours (daily)</label>
+              <input type="number" id="study_hours" name="study_hours" min="0" max="24" step="0.1" placeholder="e.g. 6" required inputmode="decimal" />
+              <span class="field__hint">0–24 hours</span>
+              <span class="field__error" role="alert"></span>
+            </div>
+
+            <!-- Physical Activity Hours -->
+            <div class="field">
+              <label for="physical_activity_hours">Physical activity (daily)</label>
+              <input type="number" id="physical_activity_hours" name="physical_activity_hours" min="0" max="24" step="0.1" placeholder="e.g. 1.5" required inputmode="decimal" />
+              <span class="field__hint">0–24 hours</span>
+              <span class="field__error" role="alert"></span>
+            </div>
+
+            <!-- Sleep Hours -->
+            <div class="field">
+              <label for="sleep_hours_per_night">Sleep per night (hours)</label>
+              <input type="number" id="sleep_hours_per_night" name="sleep_hours_per_night" min="0" max="24" step="0.1" placeholder="e.g. 7" required inputmode="decimal" />
+              <span class="field__hint">0–24 hours</span>
+              <span class="field__error" role="alert"></span>
+            </div>
+
+            <!-- Stress Level -->
+            <div class="field">
+              <label for="stress_level">Stress level</label>
+              <select id="stress_level" name="stress_level" required>
+                <option value="" disabled selected>Select stress level</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+                <option value="Very High">Very High</option>
+              </select>
+              <span class="field__error" role="alert"></span>
+            </div>
+
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn--primary btn--wide" id="submitBtn">
+              <span class="btn__label">Get my score</span>
+              <span class="btn__spinner" aria-hidden="true"></span>
+            </button>
+            <button type="reset" class="btn btn--ghost" id="resetBtn">Reset form</button>
+          </div>
+
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ RESULT ============ -->
+    <section class="result" id="result-section" hidden>
+      <div class="wrap">
+        <div class="glass-card result-card reveal" id="resultCard">
+
+          <div class="result-card__gauge">
+            <svg viewBox="0 0 220 220" width="220" height="220" id="gaugeSvg">
+              <circle class="gauge__track" cx="110" cy="110" r="92" />
+              <circle class="gauge__fill" id="gaugeFill" cx="110" cy="110" r="92" />
+            </svg>
+            <div class="gauge__center">
+              <span class="gauge__score" id="scoreNumber">0.0</span>
+              <span class="gauge__max">/ 10</span>
+            </div>
+          </div>
+
+          <div class="result-card__details">
+            <span class="badge" id="scoreBadge">—</span>
+            <h3 class="result-card__title" id="resultTitle">Your wellbeing score</h3>
+            <p class="result-card__text" id="resultInterpretation">
+              Fill in the form to see your predicted score here.
+            </p>
+
+            <div class="progress-bar" aria-hidden="true">
+              <div class="progress-bar__fill" id="progressFill"></div>
+            </div>
+
+            <button class="btn btn--ghost btn--small" id="tryAgainBtn" type="button">Run another check-in</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="22" height="22">
+            <circle cx="20" cy="20" r="17" fill="none" stroke="var(--mint)" stroke-width="2" opacity="0.5"/>
+            <circle cx="20" cy="20" r="11" fill="none" stroke="var(--mint)" stroke-width="2"/>
+            <circle cx="20" cy="20" r="4" fill="var(--mint)"/>
+          </svg>
+        </span>
+        MindPulse
+      </div>
+      <p class="site-footer__note">
+        Built as an academic ML project. This score is a statistical estimate, not a clinical
+        assessment — if you're struggling, please talk to someone you trust or a licensed professional.
+      </p>
+      <p class="site-footer__meta">&copy; <span id="year"></span> MindPulse · FastAPI + scikit-learn backend</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

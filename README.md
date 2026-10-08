@@ -3,7 +3,7 @@
 > **Can student social-media habits and lifestyle factors predict mental health scores? This project trains a regression model to estimate a student's Mental Health Score from social media usage, academic level, sleep, physical activity, and stress-related factors.**
 
 🌐 **Live Demo:** https://mental-health-score-prediction-1-jdjx.onrender.com/
-💻 **GitHub:** https://github.com/kalevaishnavi04/mental-health-score-prediction
+💻 **GitHub:** https://github.com/kalevaishnavi04/mental-health-score-prediction.
 
 ---
 
